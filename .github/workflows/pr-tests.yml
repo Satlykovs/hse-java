@@ -37,8 +37,11 @@ jobs:
       - name: Copy test files
         run: |
           echo "Copying test data"
-          cp -R hidden-tests/src/test/resources/. src/test/resources/
-          echo "Test data copied"
+          mkdir -p src/test/resources
+          cp -R hidden-tests/src/test/resources src/test/resources/
+          echo ""
+          echo "Скопированы файлы:"
+          find src/test/resources -type f | sort | while read f; do echo "  $f"; done
           rm -rf hidden-tests
       
       - name: Run tests
