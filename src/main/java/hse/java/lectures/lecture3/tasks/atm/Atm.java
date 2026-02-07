@@ -12,9 +12,9 @@ public class Atm
     {
     }
 
-    public void deposit(Map<Integer, Integer> banknotes) {}
+    public void deposit(Map<Denomination, Integer> banknotes) {}
 
-    public Map<Integer, Integer> withdraw(int amount)
+    public Map<Denomination, Integer> withdraw(int amount)
     {
         return Map.of();
     }
@@ -24,7 +24,7 @@ public class Atm
         return 0;
     }
 
-    private enum Denomination
+    public enum Denomination
     {
         D50(50),
         D100(100),
